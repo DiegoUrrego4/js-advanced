@@ -4,7 +4,12 @@ import { heroes } from '../data/heroes';
  * @param {HTMLDivElement} element
  */
 export const forAwaitComponent = async element => {
-  console.log('forAwait');
+  const id = '5d86371f1efebc31def272e25';
+  const heroesIds = heroes.map(hero => hero.id);
+  const heroPromises = getHeroesAsync(heroesIds);
+  for await (const hero of heroPromises) {
+    element.innerHTML += `${hero.name} </br>`;
+  }
 };
 
 /**
