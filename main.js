@@ -1,6 +1,8 @@
 import './style.css';
 import javascriptLogo from './javascript.svg';
 import viteLogo from '/vite.svg';
+import { environmentsComponents } from './src/concepts/01-environments';
+import { callbackComponent } from './src/concepts/02-callbacks';
 
 document.querySelector('#app').innerHTML = `
   <div>
@@ -16,4 +18,6 @@ document.querySelector('#app').innerHTML = `
   </div>
 `;
 
-console.log('Hola mundo!');
+const element = document.querySelector('.card');
+
+callbackComponent(element);
